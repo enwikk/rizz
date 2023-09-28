@@ -1,5 +1,5 @@
 /* Default styles */
-h1 {
+.first h1 {
     font-size: 100px;
     font-weight: bold;
     margin-top: 20%;
@@ -7,32 +7,129 @@ h1 {
     color: rgb(94, 130, 231);
 }
 
-a {
+.first a {
     font-size: 24px;
     margin-left: 45%;
 }
 
+.second h1 {
+    margin-top: 20%;
+    margin-left: 40%;
+    margin-right: 30%;
+    font-size: 70px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.border {
+    border: 1px solid;
+}
+
+.third h3 {
+    padding: 0.02em 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid;
+    border-color: gray;
+    border-radius: 5px;
+    margin-top: 20%;
+    margin-left: 40%;
+    margin-right: 35%;
+    font-weight: 1;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+button {
+    margin-left: 62%;
+    padding: 7px;
+    font-size: 18px;
+    background-color: #00B2FF;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    border: 0px;
+}
+
+.fourth h1 {
+    margin-top: 20%;
+    margin-left: 36%;
+    margin-right: 30%;
+    font-size: 50px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.fifth {
+    margin-top: 20%;
+    margin-left: 35%;
+    margin-right: 30%;
+    font-size: 40px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.highlight {
+    color: white;
+    background-color: #00B2FF; /* You can choose the color you prefer */
+}
+
+
 /* Media query for screens smaller than 800px (adjust as needed) */
 @media (max-width: 800px) {
-    h1 {
+    .first h1 {
         font-size: 75px;
-        margin-top: 45%;
+        margin-top: 50%;
         margin-left: 43%;
     }
 
-    a {
+    .second h1 {
+        font-size: 40px;
+        margin-top: 45%;
+        margin-left: 40%
+    }
+
+    .third h3 {
+        font-size: 18px;
+        margin-top: 45%;
+        margin-left: 20%;
+        margin-right: 10%;
+    }
+
+    button {
+        margin-left: 79%;
+    }
+
+    .fourth h1 {
+        font-size: 30px;
+        margin-top: 45%;
+        margin-left: 40%;
+    }
+
+    .fifth h1 {
+        font-size: 38px;
+        margin-top: 45%;
+        margin-left: 10%;
+    }
+
+    .first a {
         font-size: 24px;
-        margin-left: 25%;
+        margin-left: 27%;
     }
 }
 
 .fade-in {
-    animation: fadeIn 2.5s;
+    animation: fadeIn 4s;
 }
 
+
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+
 .baseline {
-    animation: baselineMove 2s ease-in-out;
+    animation: baselineMove 4s ease-in-out;
     display: inline-block; /* Ensure the animation works correctly on inline elements */
+}
+
+.pop {
+    animation: pop 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -50,5 +147,24 @@ a {
     }
     100% {
         transform: translateY(0); /* Return to the baseline */
+    }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5); /* Start at 50% scale */
+        opacity: 0; /* Start with 0 opacity */
+    }
+    50% {
+        transform: scale(1.1); /* Pop to 110% scale halfway through */
+        opacity: 1; /* Become fully visible */
+    }
+    100% {
+        transform: scale(1); /* Return to original scale */
     }
 }

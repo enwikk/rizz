@@ -15,8 +15,74 @@
         <a class="baseline">This may sounds weird</a>
     </div>
 
-    <div class="second"></div>
+    <div class="second" id="second" style="display: none;">
+        <h1 class="fade-in">Your beauty never fails to captivate me</h1>
+    </div>
+
+    <div class="third" id="third" style="display: none;">
+        <h3 class="fade-in">One message from you makes my day</h3>
+        <button id="sendButton">Send</button>
+    </div>
+
+    <div class="fourth" id="fourth" style="display: none;">
+        <h1 class="fade-in">I lack the courage to ask you this personally..</h1>
+    </div>
+
+    <div class="fifth" id="fifth" style="display: none;">
+        <h1 class="fade-in">Pwede isa pang <span class="highlight pop" id="highlightChance">Chance?</span></h1>
+    </div>    
 
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const firstDiv = document.querySelector(".first");
+        const secondDiv = document.querySelector(".second");
+        const thirdDiv = document.querySelector(".third");
+        const fourthDiv = document.querySelector(".fourth");
+        const fifthDiv = document.querySelector(".fifth");
+        const spanElement = document.querySelector("#highlightChance");
+        const sendButton = document.getElementById("sendButton");
+
+        const fadeInElement = document.querySelector(".first .fade-in");
+        const baselineElement = document.querySelector(".first .baseline");
+
+        fadeInElement.addEventListener("animationend", function() {
+            firstDiv.style.display = "none";
+            secondDiv.style.display = "block";
+        });
+
+        baselineElement.addEventListener("animationend", function() {
+            firstDiv.style.display = "none";
+            secondDiv.style.display = "block";
+        });
+
+        const secondFadeInElement = document.querySelector(".second .fade-in");
+
+        secondFadeInElement.addEventListener("animationend", function() {
+            secondDiv.style.display = "none";
+            thirdDiv.style.display = "block";
+        });
+
+        sendButton.addEventListener("click", function() {
+            thirdDiv.classList.add("fade-out");
+
+            thirdDiv.addEventListener("animationend", function() {
+                thirdDiv.style.display = "none";
+                fourthDiv.style.display = "block";
+
+                // After the animation ends, add the highlight to the word "Chance"
+                spanElement.classList.add("highlight");
+            });
+        });
+
+        const thirdFadeInElement = document.querySelector(".fourth .fade-in");
+
+        thirdFadeInElement.addEventListener("animationend", function() {
+            fourthDiv.style.display = "none";
+            fifthDiv.style.display = "block";
+        });
+    });
+</script>
