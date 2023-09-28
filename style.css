@@ -1,26 +1,54 @@
 /* Default styles */
 h1 {
-    font-size: 24px;
+    font-size: 100px;
     font-weight: bold;
-    margin-top: 25%;
-    margin-left: 50%;
+    margin-top: 20%;
+    margin-left: 48%;
+    color: rgb(94, 130, 231);
 }
 
 a {
-    font-size: 16px;
-    margin-left: 47%;
+    font-size: 24px;
+    margin-left: 45%;
 }
 
-/* Media query for screens smaller than 768px (adjust as needed) */
+/* Media query for screens smaller than 800px (adjust as needed) */
 @media (max-width: 800px) {
     h1 {
-        font-size: 50px;
+        font-size: 75px;
         margin-top: 45%;
-        margin-left: 45%;
+        margin-left: 43%;
     }
 
     a {
-        font-size: 14px;
-        margin-left: 35%;
+        font-size: 24px;
+        margin-left: 25%;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2.5s;
+}
+
+.baseline {
+    animation: baselineMove 2s ease-in-out;
+    display: inline-block; /* Ensure the animation works correctly on inline elements */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes baselineMove {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Start at the baseline */
+    }
+    50% {
+        transform: translateY(0); /* Move upward by 5 pixels (adjust as needed) */
+    }
+    100% {
+        transform: translateY(0); /* Return to the baseline */
     }
 }
